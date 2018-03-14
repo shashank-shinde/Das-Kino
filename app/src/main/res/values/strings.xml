@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Das Kino</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="demoText">ExpandableTextView is an Android library that allows developers to easily create an TextView which can expand/collapse just like the Google Play\'s app description. Feel free to use it all you want in your Android apps provided that you cite this project.</string>
+    <string name="overview">Overview</string>
+    <string name="original_title">Original Title:</string>
+    <string name="original_language">Original language: </string>
+    <string name="runtime">Runtime:</string>
+    <string name="box_office">Box office:</string>
+    <string name="budget">Budget:</string>
+
+    <!--    INTENT KEY  -->
+    <string name="intentKey">INTENT_KEY</string>
+
+
+    <!--    Shortcuts   -->
+
+    <string name="DisabledMessage">Not available</string>
+    <string name="shortcutNowPlaying">Now Playing</string>
+    <string name="shortcutUpcoming">Upcoming</string>
+    <string name="shortcutPopular">Popular</string>
+    <string name="shortcutTop">Top Rated</string>
+
+
+</resources>

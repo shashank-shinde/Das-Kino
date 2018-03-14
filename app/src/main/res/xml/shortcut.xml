@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <shortcut
+        android:shortcutId="shortcutNowPlaying"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_play"
+        android:shortcutShortLabel="@string/shortcutNowPlaying"
+        android:shortcutLongLabel="@string/shortcutNowPlaying"
+        android:shortcutDisabledMessage="@string/DisabledMessage">
+        <intent
+            android:action="com.sas_apps.daskino.shortcutNowPlaying"
+            android:targetPackage="com.sas_apps.daskino"
+            android:targetClass="com.sas_apps.daskino.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+
+
+    <shortcut
+        android:shortcutId="shortcutUpcoming"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_upcoming"
+        android:shortcutShortLabel="@string/shortcutUpcoming"
+        android:shortcutLongLabel="@string/shortcutUpcoming"
+        android:shortcutDisabledMessage="@string/DisabledMessage">
+        <intent
+            android:action="com.sas_apps.daskino.shortcutUpcoming"
+            android:targetPackage="com.sas_apps.daskino"
+            android:targetClass="com.sas_apps.daskino.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+
+    <shortcut
+        android:shortcutId="shortcutPopular"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_trending"
+        android:shortcutShortLabel="@string/shortcutPopular"
+        android:shortcutLongLabel="@string/shortcutPopular"
+        android:shortcutDisabledMessage="@string/DisabledMessage">
+        <intent
+            android:action="com.sas_apps.daskino.shortcutPopular"
+            android:targetPackage="com.sas_apps.daskino"
+            android:targetClass="com.sas_apps.daskino.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+
+
+    <shortcut
+        android:shortcutId="shortcutTop"
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_top"
+        android:shortcutShortLabel="@string/shortcutTop"
+        android:shortcutLongLabel="@string/shortcutTop"
+        android:shortcutDisabledMessage="@string/DisabledMessage">
+        <intent
+            android:action="com.sas_apps.daskino.shortcutTop"
+            android:targetPackage="com.sas_apps.daskino"
+            android:targetClass="com.sas_apps.daskino.MainActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+
+
+
+</shortcuts>
