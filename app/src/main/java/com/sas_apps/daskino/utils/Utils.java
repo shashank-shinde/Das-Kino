@@ -16,7 +16,7 @@ public class Utils {
     public final static String THUMBNAIL_URL = "http://image.tmdb.org/t/p/w185";
     public final static String POSTER_URL = "http://image.tmdb.org/t/p/w500";
     public final static String BACKGROUND_IMAGE_URL = "http://image.tmdb.org/t/p/w780";
-
+    public final static String YTS_BASE_URL = "https://yts.am/api/v2/";
 
 
     public static String getLanguage(String id) {
