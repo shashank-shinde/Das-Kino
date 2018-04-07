@@ -46,7 +46,10 @@ public class CastListAdaptor extends RecyclerView.Adapter<CastListAdaptor.CastLi
         MovieCast movieCast = castList.get(position);
         if (movieCast.getProfilePhoto()!=null){
             holder.textName.setText(movieCast.getName());
-            holder.textRole.setText(MessageFormat.format("{0}{1})", '(', movieCast.getCharacter()));
+            if (movieCast.getCharacter()!=null){
+                holder.textRole.setText(MessageFormat.format("{0}{1})", '(',
+                        movieCast.getCharacter()));
+            }
             Glide.with(context)
                     .load(Utils.THUMBNAIL_URL + movieCast.getProfilePhoto())
                     .into(holder.imageCast);

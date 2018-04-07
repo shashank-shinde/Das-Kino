@@ -4,6 +4,8 @@ package com.sas_apps.daskino.adaptor;
  */
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +31,7 @@ public class TorrentsAdaptor extends RecyclerView.Adapter<TorrentsAdaptor.Torren
         this.torrentList = torrentList;
         this.context = context;
     }
+
     @Override
     public TorrentListHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.layout_torrent_list, parent, false);
@@ -38,13 +41,17 @@ public class TorrentsAdaptor extends RecyclerView.Adapter<TorrentsAdaptor.Torren
     @Override
     public void onBindViewHolder(TorrentListHolder holder, int position) {
         final Torrent torrent = torrentList.get(position);
-        holder.textQuality.setText("Quality: "+torrent.getQuality());
-        holder.textPeers.setText("Peers: "+torrent.getPeers());
-        holder.textSeeds.setText("Seeds: "+torrent.getSeeds());
-        holder.textSize.setText("Size: "+torrent.getSize());
+        holder.textQuality.setText("Quality: " + torrent.getQuality());
+        holder.textPeers.setText("Peers: " + torrent.getPeers());
+        holder.textSeeds.setText("Seeds: " + torrent.getSeeds());
+        holder.textSize.setText("Size: " + torrent.getSize());
         holder.imageDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Uri uri = Uri.parse(torrent.getUrl());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                context.startActivity(intent);
                 Toast.makeText(context, torrent.getUrl(), Toast.LENGTH_SHORT).show();
             }
         });

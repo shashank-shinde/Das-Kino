@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class Utils {
 
-    public final static String API_KEY = "<Api Key>";
+    public final static String API_KEY = "5cbefd2315d88e62a174ad57bf0e0ba0";
     public final static String BASE_URL = "https://api.themoviedb.org/3/";
     public final static String THUMBNAIL_URL = "http://image.tmdb.org/t/p/w185";
     public final static String POSTER_URL = "http://image.tmdb.org/t/p/w500";
