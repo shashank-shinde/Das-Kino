@@ -3,8 +3,8 @@ package com.sas_apps.daskino.adaptor;
  * Created by Shashank Shinde.
  */
 
+import android.app.DownloadManager;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,18 +14,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sas_apps.daskino.DetailActivity;
 import com.sas_apps.daskino.R;
 import com.sas_apps.daskino.model.torrent.Torrent;
-
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class TorrentsAdaptor extends RecyclerView.Adapter<TorrentsAdaptor.TorrentListHolder> {
 
-    List<Torrent> torrentList;
-    Context context;
+    private List<Torrent> torrentList;
+    private Context context;
 
     public TorrentsAdaptor(List<Torrent> torrentList, Context context) {
         this.torrentList = torrentList;
@@ -48,11 +47,14 @@ public class TorrentsAdaptor extends RecyclerView.Adapter<TorrentsAdaptor.Torren
         holder.imageDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Uri uri = Uri.parse(torrent.getUrl());
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                context.startActivity(intent);
-                Toast.makeText(context, torrent.getUrl(), Toast.LENGTH_SHORT).show();
+                DownloadManager manager = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(torrent.getUrl()));
+                request.setDescription("Downloading torrent");
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                Toast.makeText(context,"Downloading torrent",Toast.LENGTH_SHORT).show();
+                DetailActivity.dialogTorrent.dismiss();
+                assert manager != null;
+                manager.enqueue(request);
             }
         });
     }
@@ -75,7 +77,7 @@ public class TorrentsAdaptor extends RecyclerView.Adapter<TorrentsAdaptor.Torren
         @BindView(R.id.image_download)
         ImageView imageDownload;
 
-        public TorrentListHolder(View itemView) {
+        TorrentListHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

@@ -52,8 +52,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class DetailActivity extends AppCompatActivity implements Callback<MovieDetails>, OnSuggestionClicked,
-        OnItemClicked {
+public class DetailActivity extends AppCompatActivity implements Callback<MovieDetails>,
+        OnSuggestionClicked, OnItemClicked {
 
     private static final String TAG = "DetailActivity";
 
@@ -65,7 +65,7 @@ public class DetailActivity extends AppCompatActivity implements Callback<MovieD
     private Call<YTSTorrent> torrentCall;
     private Retrofit torrentRetrofit = null;
     private List<Torrent> torrentList = new ArrayList<>();
-    private Dialog dialogTorrent;
+    public static Dialog dialogTorrent;
     private TorrentsAdaptor torrentsAdaptor;
     TextView textDialog;
     RecyclerView recyclerViewDialog;
@@ -127,7 +127,7 @@ public class DetailActivity extends AppCompatActivity implements Callback<MovieD
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
         expandableTextView = findViewById(R.id.expand_text_view);
-//        expandableTextView.setText(getString(R.string.demoText));
+        /* expandableTextView.setText(getString(R.string.demoText)); */
         String id = getIntent().getStringExtra(getResources().getString(R.string.intentKey));
 //        Log.d(TAG, "onCreate: " + id);
 
